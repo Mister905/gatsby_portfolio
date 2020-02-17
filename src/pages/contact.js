@@ -36,6 +36,7 @@ class Contact extends Component {
       : null
     this.recaptchaRef = React.createRef()
   }
+
   state = {
     name: "",
     email: "",
@@ -44,7 +45,7 @@ class Contact extends Component {
 
   componentDidUpdate = (prevProps, prevState) => {
     let message = document.getElementById("message")
-    M.textareaAutoResize(message)
+    window.M.textareaAutoResize(message)
   }
 
   encode = data => {
@@ -66,7 +67,10 @@ class Contact extends Component {
         ...this.state,
       }),
     })
-      .then(() => navigate(form.getAttribute("action")))
+      .then(() => {
+        console.log(this.state)
+        navigate(form.getAttribute("action"))
+      })
       .catch(error => alert(error))
   }
 
