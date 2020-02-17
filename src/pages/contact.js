@@ -1,7 +1,6 @@
 import React from "react"
 import { navigate } from "gatsby"
 import Recaptcha from "react-google-recaptcha"
-import Layout from "../layout"
 
 const RECAPTCHA_KEY = process.env.GATSBY_SITE_RECAPTCHA_KEY
 if (typeof RECAPTCHA_KEY === "undefined") {
