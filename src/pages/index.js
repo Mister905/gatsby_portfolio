@@ -8,9 +8,9 @@ import Head from "../components/Head"
 class Landing extends Component {
   constructor() {
     super()
-    if (typeof document !== `undefined`) {
-      document.body.classList.add("landing-bg")
-    }
+    typeof document !== `undefined`
+      ? document.body.classList.add("landing-bg")
+      : null
   }
 
   componentWillUnmount = () => {

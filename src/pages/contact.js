@@ -30,9 +30,9 @@ if (typeof RECAPTCHA_KEY === "undefined") {
 class Contact extends Component {
   constructor() {
     super()
-    if (document !== `undefined`) {
-      document.body.classList.add("bg-gray")
-    }
+    typeof document !== `undefined`
+      ? document.body.classList.add("bg-gray")
+      : null
     const recaptchaRef = React.createRef()
   }
   state = {
