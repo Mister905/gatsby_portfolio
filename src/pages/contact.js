@@ -55,7 +55,7 @@ class Contact extends Component {
   handleSubmit = (e, history) => {
     e.preventDefault()
     const form = e.target
-    const recaptchaValue = recaptchaRef.current.getValue()
+    const recaptchaValue = this.recaptchaRef.current.getValue()
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
