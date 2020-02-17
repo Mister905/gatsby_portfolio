@@ -57,7 +57,6 @@ class Contact extends Component {
   handleSubmit = (e, history) => {
     e.preventDefault()
     const form = e.target
-    console.log(form.getAttribute("name"))
     const recaptchaValue = this.recaptchaRef.current.getValue()
     fetch("/", {
       method: "POST",
@@ -109,7 +108,6 @@ class Contact extends Component {
                       <input name="bot-field" />
                     </label>
                   </div>
-
                   <div className="row">
                     <div className="col m10 offset-m1 custom-input-field">
                       <label className="dark-blue-text fw-600">
