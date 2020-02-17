@@ -59,7 +59,7 @@ class Contact extends Component {
     const form = e.target
     const recaptchaValue = this.recaptchaRef.current.getValue()
     fetch("/", {
-      method: "POST",
+      method: "post",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: this.encode({
         "form-name": form.getAttribute("name"),
