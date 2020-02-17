@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
 import profile from "../assets/img/profile.jpg"
-import M from "materialize-css"
 if (typeof window !== "undefined") {
   require("materialize-css/dist/js/materialize.min.js")
 }
