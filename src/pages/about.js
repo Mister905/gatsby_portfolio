@@ -7,7 +7,7 @@ class About extends Component {
   constructor() {
     super()
     typeof document !== `undefined`
-      ? document.body.classList.add("landing-gray")
+      ? document.body.classList.add("bg-gray")
       : null
   }
   render() {
