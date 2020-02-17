@@ -31,8 +31,6 @@ class Contact extends Component {
     message: "",
   }
 
-  const recaptchaRef = React.createRef()
-
   componentDidUpdate = (prevProps, prevState) => {
     let message = document.getElementById("message")
     M.textareaAutoResize(message)
@@ -52,18 +50,19 @@ class Contact extends Component {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        'form-name': form.getAttribute('name'),
-        'g-recaptcha-response': recaptchaValue,
+        "form-name": form.getAttribute("name"),
+        "g-recaptcha-response": recaptchaValue,
         ...state,
       }),
     })
-      .then(() => navigate(form.getAttribute('action')))
-      .catch((error) => alert(error))
+      .then(() => navigate(form.getAttribute("action")))
+      .catch(error => alert(error))
   }
 
   handleChange = e => this.setState({ [e.target.name]: e.target.value })
 
   render() {
+    const recaptchaRef = React.createRef()
     const { name, email, message } = this.state
     return (
       <div>
