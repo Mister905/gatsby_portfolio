@@ -9,6 +9,7 @@ import expensicon from "../assets/img/project_images/expensicon/expensicon.png"
 import jeopardy from "../assets/img/project_images/jeopardy/jeopardy.png"
 import { GoMarkGithub } from "react-icons/go"
 import Head from "../components/Head"
+import Recaptcha from "react-google-recaptcha"
 if (typeof window !== "undefined") {
   require("materialize-css/dist/js/materialize.min.js")
 }
@@ -68,7 +69,7 @@ class Contact extends Component {
     const { name, email, message } = this.state
     return (
       <div>
-        <Head />
+        <Head title="Contact" />
         <FixedSidenav />
         <div className="container custom-container">
           <div className="row mt-25">
