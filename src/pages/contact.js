@@ -46,26 +46,23 @@ class Contact extends Component {
     M.textareaAutoResize(message)
   }
 
-  handleSubmit = (e, history) => {
-    
-    const encode = data => {
-      return Object.keys(data)
-        .map(
-          key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-        )
-        .join("&")
-    }
+  encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
+  }
 
+  handleSubmit = (e, history) => {
     e.preventDefault()
     const form = e.target
     const recaptchaValue = this.recaptchaRef.current.getValue()
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
+      body: this.encode({
         "form-name": form.getAttribute("name"),
         "g-recaptcha-response": recaptchaValue,
-        ...state,
+        ...this.state,
       }),
     })
       .then(() => navigate(form.getAttribute("action")))
