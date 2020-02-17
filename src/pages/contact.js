@@ -58,6 +58,7 @@ class Contact extends Component {
     e.preventDefault()
     const form = e.target
     const recaptchaValue = this.recaptchaRef.current.getValue()
+    console.log(recaptchaValue)
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
