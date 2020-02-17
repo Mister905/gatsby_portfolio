@@ -12,8 +12,6 @@ import Head from "../components/Head"
 import Recaptcha from "react-google-recaptcha"
 if (typeof window !== "undefined") {
   require("materialize-css/dist/js/materialize.min.js")
-} else {
-  import M from "materialize-css"
 }
 
 // https://www.netlify.com/blog/2017/07/20/how-to-integrate-netlifys-form-handling-in-a-react-app/

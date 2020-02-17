@@ -15,7 +15,6 @@ class Sidenav extends Component {
     window.M.Sidenav.init(this.Sidenav, { edge: "right" })
 
     let instance = M.Sidenav.getInstance(this.Sidenav)
-    console.log('test')
   }
 
   componentWillUnmount = () => {
