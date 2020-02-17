@@ -1,22 +1,7 @@
-import React, { Component } from "react"
-import Profile from "../assets/img/profile.jpg"
-import FixedSidenav from "../components/FixedSidenav"
-import mernbook from "../assets/img/project_images/mernbook/mernbook.png"
-import mern_survey from "../assets/img/project_images/mern-survey/mern-survey.png"
-import art_gallery from "../assets/img/project_images/art_gallery/art_gallery.png"
-import dark_sky from "../assets/img/project_images/dark_sky/dark_sky.png"
-import expensicon from "../assets/img/project_images/expensicon/expensicon.png"
-import jeopardy from "../assets/img/project_images/jeopardy/jeopardy.png"
-import { GoMarkGithub } from "react-icons/go"
-import Head from "../components/Head"
-import Recaptcha from "react-google-recaptcha"
-import { navigate } from "gatsby"
-if (typeof window !== "undefined") {
-  require("materialize-css/dist/js/materialize.min.js")
-}
-
-// https://www.netlify.com/blog/2017/07/20/how-to-integrate-netlifys-form-handling-in-a-react-app/
-// https://github.com/sw-yx/gatsby-netlify-form-example-v2
+import React from 'react'
+import { navigate } from 'gatsby'
+import Recaptcha from 'react-google-recaptcha'
+import Layout from '../layout'
 
 const RECAPTCHA_KEY = process.env.GATSBY_SITE_RECAPTCHA_KEY
 if (typeof RECAPTCHA_KEY === "undefined") {
@@ -28,157 +13,77 @@ if (typeof RECAPTCHA_KEY === "undefined") {
   `)
 }
 
-class Contact extends Component {
-  constructor() {
-    super()
-    typeof document !== `undefined`
-      ? document.body.classList.add("bg-gray")
-      : null
-    this.recaptchaRef = React.createRef()
-  }
-
-  state = {
-    name: "",
-    email: "",
-    message: "",
-  }
-
-  componentDidUpdate = (prevProps, prevState) => {
-    let message = document.getElementById("message")
-    window.M.textareaAutoResize(message)
-  }
-
-  encode = data => {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&")
-  }
-
-  handleSubmit = (e, history) => {
-    e.preventDefault()
-    const form = e.target
-    const recaptchaValue = this.recaptchaRef.current.getValue()
-    fetch("/", {
-      method: "post",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: this.encode({
-        "form-name": form.getAttribute("name"),
-        "g-recaptcha-response": recaptchaValue,
-        ...this.state,
-      }),
-    })
-      .then(() => {
-        // navigate(form.getAttribute("action"))
-      })
-      .catch(error => alert(error))
-  }
-
-  handleChange = e => this.setState({ [e.target.name]: e.target.value })
-
-  render() {
-    const { name, email, message } = this.state
-    return (
-      <div>
-        <Head title="Contact" />
-        <FixedSidenav />
-        <div className="container custom-container">
-          <div className="row mt-25">
-            <div className="col m8 offset-m2 card">
-              <div className="row">
-                <div className="col m12 center-align mt-25">
-                  <div className="component-heading dark-blue-text fw-600">
-                    Get in Touch
-                  </div>
-                </div>
-              </div>
-              <div className="row mt-25">
-                <form
-                  className="col m12 contact-form"
-                  name="contact"
-                  method="POST"
-                  data-netlify="true"
-                  netlify-honeypot="bot-field"
-                  data-netlify-recaptcha="true"
-                  action="/thanks/"
-                  onSubmit={this.handleSubmit}
-                >
-                  <input type="hidden" name="form-name" value="contact" />
-                  <div className="hidden">
-                    <label>
-                      Don’t fill this out if you're human:{" "}
-                      <input name="bot-field" />
-                    </label>
-                  </div>
-                  <div className="row">
-                    <div className="col m10 offset-m1 custom-input-field">
-                      <label className="dark-blue-text fw-600">
-                        Your Name:
-                        <input
-                          type="text"
-                          name="name"
-                          value={name}
-                          onChange={this.handleChange}
-                        />
-                      </label>
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="col m10 offset-m1 custom-input-field">
-                      <label className="dark-blue-text fw-600">
-                        Your Email:
-                        <input
-                          type="email"
-                          name="email"
-                          value={email}
-                          onChange={this.handleChange}
-                        />
-                      </label>
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="col m10 offset-m1 custom-input-field">
-                      <label className="dark-blue-text fw-600">
-                        Message:
-                        <textarea
-                          id="message"
-                          name="message"
-                          className="materialize-textarea"
-                          value={message}
-                          onChange={this.handleChange}
-                        ></textarea>
-                      </label>
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="col m10 offset-m1 custom-input-field">
-                      <Recaptcha
-                        ref={this.recaptchaRef}
-                        sitekey={RECAPTCHA_KEY}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="input-field col m10 offset-m1">
-                      <button
-                        type="submit"
-                        className="btn btn-portfolio right fw-600"
-                      >
-                        Send
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  }
+function encode(data) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
 }
 
-export default Contact
+export default function Contact() {
+  const [state, setState] = React.useState({})
+  const recaptchaRef = React.createRef()
+
+  const handleChange = (e) => {
+    setState({ ...state, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const form = e.target
+    const recaptchaValue = recaptchaRef.current.getValue()
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': form.getAttribute('name'),
+        'g-recaptcha-response': recaptchaValue,
+        ...state,
+      }),
+    })
+      .then(() => navigate(form.getAttribute('action')))
+      .catch((error) => alert(error))
+  }
+
+  return (
+    
+      <h1>reCAPTCHA 2</h1>
+      <form
+        name="contact-recaptcha"
+        method="post"
+        action="/thanks/"
+        data-netlify="true"
+        data-netlify-recaptcha="true"
+        onSubmit={handleSubmit}
+      >
+        <noscript>
+          <p>This form won’t work with Javascript disabled</p>
+        </noscript>
+        <p>
+          <label>
+            Your name:
+            <br />
+            <input type="text" name="name" onChange={handleChange} />
+          </label>
+        </p>
+        <p>
+          <label>
+            Your email:
+            <br />
+            <input type="email" name="email" onChange={handleChange} />
+          </label>
+        </p>
+        <p>
+          <label>
+            Message:
+            <br />
+            <textarea name="message" onChange={handleChange} />
+          </label>
+        </p>
+        <Recaptcha ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
+        <p>
+          <button type="submit">Send</button>
+        </p>
+      </form>
+
+  )
+}
