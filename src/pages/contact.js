@@ -2,7 +2,7 @@ import React from "react"
 import { navigate } from "gatsby-link"
 import Recaptcha from "react-google-recaptcha"
 
-const RECAPTCHA_KEY = process.env.GATSBY_RECAPTCHA_KEY
+const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY
 if (typeof RECAPTCHA_KEY === "undefined") {
   throw new Error(`
   Env var GATSBY_APP_SITE_RECAPTCHA_KEY is undefined! 
@@ -21,7 +21,7 @@ function encode(data) {
 export default function Contact() {
   const [state, setState] = React.useState({})
 
-  // const recaptchaRef = React.createRef()
+  const recaptchaRef = React.createRef()
 
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value })
@@ -36,7 +36,7 @@ export default function Contact() {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": form.getAttribute("name"),
-        // "g-recaptcha-response": recaptchaValue,
+        "g-recaptcha-response": recaptchaValue,
         ...state,
       }),
     })
@@ -53,7 +53,7 @@ export default function Contact() {
         action="/thanks/"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        // data-netlify-recaptcha="true"
+        data-netlify-recaptcha="true"
         onSubmit={handleSubmit}
       >
         {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
@@ -86,7 +86,7 @@ export default function Contact() {
           </label>
         </p>
         <p>
-          {/* <Recaptcha ref={recaptchaRef} sitekey={RECAPTCHA_KEY} /> */}
+          <Recaptcha ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
         </p>
 
         <p>
