@@ -99,9 +99,10 @@ class Contact extends Component {
                   data-netlify="true"
                   netlify-honeypot="bot-field"
                   data-netlify-recaptcha="true"
+                  action="/thanks/"
                   onSubmit={this.handleSubmit}
-                  action="/thanks"
                 >
+                  <input type="hidden" name="form-name" value="contact" />
                   <div className="hidden">
                     <label>
                       Don’t fill this out if you're human:{" "}
