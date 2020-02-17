@@ -36,7 +36,7 @@ export default function Contact() {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": form.getAttribute("name"),
-        "g-recaptcha-response": recaptchaValue,
+        // "g-recaptcha-response": recaptchaValue,
         ...state,
       }),
     })
@@ -53,7 +53,7 @@ export default function Contact() {
         action="/thanks/"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        data-netlify-recaptcha="true"
+        // data-netlify-recaptcha="true"
         onSubmit={handleSubmit}
       >
         {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
@@ -86,7 +86,7 @@ export default function Contact() {
           </label>
         </p>
         <p>
-          <Recaptcha ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
+          {/* <Recaptcha ref={recaptchaRef} sitekey={RECAPTCHA_KEY} /> */}
         </p>
 
         <p>
