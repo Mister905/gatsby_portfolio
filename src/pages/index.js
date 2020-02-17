@@ -6,8 +6,12 @@ import { FaLinkedin } from "react-icons/fa"
 import Head from "../components/Head"
 
 class Landing extends Component {
-  constructor() {
-    super()
+  // constructor() {
+  //   super()
+  //   document.body.classList.add("landing-bg")
+  // }
+
+  componentDidMount = () => {
     document.body.classList.add("landing-bg")
   }
 
