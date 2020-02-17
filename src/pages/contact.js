@@ -29,13 +29,13 @@ export default function Contact() {
   const handleSubmit = e => {
     e.preventDefault()
     const form = e.target
-    const recaptchaValue = recaptchaRef.current.getValue()
+    // const recaptchaValue = recaptchaRef.current.getValue()
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": form.getAttribute("name"),
-        "g-recaptcha-response": recaptchaValue,
+        // "g-recaptcha-response": recaptchaValue,
         ...state,
       }),
     })
