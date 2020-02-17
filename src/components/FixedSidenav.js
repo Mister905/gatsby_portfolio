@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import M from "materialize-css"
-import Logo from "../../../assets/img/fixed_sidenav_logo.png"
+import Logo from "../assets/img/fixed_sidenav_logo.png"
 import { Link } from "gatsby"
 
 class FixedSidenav extends Component {
