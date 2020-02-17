@@ -1,8 +1,11 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
-import M from "materialize-css"
-import "materialize-css/dist/css/materialize.min.css"
 import profile from "../assets/img/profile.jpg"
+import M from "materialize-css"
+// import "materialize-css/dist/css/materialize.min.css"
+if (typeof window !== "undefined") {
+  require("materialize-css/dist/js/materialize.min.js")
+}
 
 class Sidenav extends Component {
   componentDidMount() {
@@ -11,7 +14,7 @@ class Sidenav extends Component {
       outDuration: 200,
       draggable: true,
     }
-    M.Sidenav.init(this.Sidenav, { edge: "right" })
+    window.M.Sidenav.init(this.Sidenav, { edge: "right" })
 
     let instance = M.Sidenav.getInstance(this.Sidenav)
   }
