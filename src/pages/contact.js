@@ -57,8 +57,8 @@ class Contact extends Component {
   handleSubmit = (e, history) => {
     e.preventDefault()
     const form = e.target
+    console.log(form.getAttribute("name"))
     const recaptchaValue = this.recaptchaRef.current.getValue()
-    console.log(recaptchaValue)
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -69,7 +69,6 @@ class Contact extends Component {
       }),
     })
       .then(() => {
-        console.log(this.state)
         navigate(form.getAttribute("action"))
       })
       .catch(error => alert(error))
@@ -104,7 +103,6 @@ class Contact extends Component {
                   onSubmit={this.handleSubmit}
                   action="/thanks"
                 >
-                  <input type="hidden" name="form-name" value="contact" />
                   <div className="hidden">
                     <label>
                       Don’t fill this out if you're human:{" "}
