@@ -6,9 +6,9 @@ import FixedSidenav from "../components/FixedSidenav"
 class About extends Component {
   constructor() {
     super()
-    typeof document !== `undefined`
-      ? document.body.classList.add("bg-gray")
-      : null
+    if (document !== `undefined`) {
+      document.body.classList.add("bg-gray")
+    }
   }
   render() {
     return (

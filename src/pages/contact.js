@@ -30,9 +30,10 @@ if (typeof RECAPTCHA_KEY === "undefined") {
 class Contact extends Component {
   constructor() {
     super()
-    typeof document !== `undefined`
-      ? document.body.classList.add("bg-gray")
-      : null
+    if (document !== `undefined`) {
+      document.body.classList.add("bg-gray")
+    }
+    const recaptchaRef = React.createRef()
   }
   state = {
     name: "",
@@ -71,7 +72,6 @@ class Contact extends Component {
   handleChange = e => this.setState({ [e.target.name]: e.target.value })
 
   render() {
-    const recaptchaRef = React.createRef()
     const { name, email, message } = this.state
     return (
       <div>

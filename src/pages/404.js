@@ -7,9 +7,9 @@ import Head from "../components/Head"
 class NotFound extends Component {
   constructor() {
     super()
-    typeof document !== `undefined`
-      ? document.body.classList.add("bg-gray")
-      : null
+    if (document !== `undefined`) {
+      document.body.classList.add("bg-gray")
+    }
   }
   render() {
     return (
