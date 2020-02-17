@@ -1,8 +1,6 @@
 import React, { Component } from "react"
 import Logo from "../assets/img/fixed_sidenav_logo.png"
 import { Link } from "gatsby"
-// import M from "materialize-css"
-// import "materialize-css/dist/css/materialize.min.css"
 if (typeof window !== "undefined") {
   require("materialize-css/dist/js/materialize.min.js")
 }

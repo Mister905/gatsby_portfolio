@@ -8,8 +8,10 @@ import dark_sky from "../assets/img/project_images/dark_sky/dark_sky.png"
 import expensicon from "../assets/img/project_images/expensicon/expensicon.png"
 import jeopardy from "../assets/img/project_images/jeopardy/jeopardy.png"
 import { GoMarkGithub } from "react-icons/go"
-import M from "materialize-css"
 import Head from "../components/Head"
+if (typeof window !== "undefined") {
+  require("materialize-css/dist/js/materialize.min.js")
+}
 
 // https://www.netlify.com/blog/2017/07/20/how-to-integrate-netlifys-form-handling-in-a-react-app/
 // https://github.com/sw-yx/gatsby-netlify-form-example-v2
