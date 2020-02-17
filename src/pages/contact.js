@@ -92,6 +92,7 @@ class Contact extends Component {
                   onSubmit={this.handleSubmit}
                   action="/thanks"
                 >
+                  <input type="hidden" name="form-name" value="contact" />
                   <div className="hidden">
                     <label>
                       Don’t fill this out if you're human:{" "}
