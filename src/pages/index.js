@@ -6,15 +6,7 @@ import { FaLinkedin } from "react-icons/fa"
 import Head from "../components/Head"
 
 class Landing extends Component {
-  constructor() {
-    super()
-    document.body.classList.add("landing-bg")
-  }
-
-  // componentDidMount = () => {
-  //   document.body.classList.add("landing-bg")
-  // }
-
+  
   componentWillUnmount = () => {
     document.body.classList.remove("landing-bg")
   }
@@ -22,7 +14,7 @@ class Landing extends Component {
   render() {
     return (
       <div>
-        <Head title="Welcome" />
+        <Head landing={true} title="Welcome" />
         <Sidenav />
         <div id="landing-overlay"></div>
         <div className="row landing-row">
