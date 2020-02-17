@@ -46,13 +46,16 @@ class Contact extends Component {
     M.textareaAutoResize(message)
   }
 
-  encode = data => {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&")
-  }
-
   handleSubmit = (e, history) => {
+    
+    const encode = data => {
+      return Object.keys(data)
+        .map(
+          key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+        )
+        .join("&")
+    }
+
     e.preventDefault()
     const form = e.target
     const recaptchaValue = this.recaptchaRef.current.getValue()
@@ -151,7 +154,10 @@ class Contact extends Component {
 
                   <div className="row">
                     <div className="col m10 offset-m1 custom-input-field">
-                      <Recaptcha ref={this.recaptchaRef} sitekey={RECAPTCHA_KEY} />
+                      <Recaptcha
+                        ref={this.recaptchaRef}
+                        sitekey={RECAPTCHA_KEY}
+                      />
                     </div>
                   </div>
 
