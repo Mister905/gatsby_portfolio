@@ -10,6 +10,7 @@ import jeopardy from "../assets/img/project_images/jeopardy/jeopardy.png"
 import { GoMarkGithub } from "react-icons/go"
 import Head from "../components/Head"
 import Recaptcha from "react-google-recaptcha"
+import { navigate } from 'gatsby'
 if (typeof window !== "undefined") {
   require("materialize-css/dist/js/materialize.min.js")
 }
