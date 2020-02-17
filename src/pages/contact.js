@@ -151,7 +151,7 @@ class Contact extends Component {
 
                   <div className="row">
                     <div className="col m10 offset-m1 custom-input-field">
-                      <Recaptcha ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
+                      <Recaptcha ref={this.recaptchaRef} sitekey={RECAPTCHA_KEY} />
                     </div>
                   </div>
 
