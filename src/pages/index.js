@@ -6,14 +6,14 @@ import { FaLinkedin } from "react-icons/fa"
 import Head from "../components/Head"
 
 class Landing extends Component {
-  // constructor() {
-  //   super()
-  //   document.body.classList.add("landing-bg")
-  // }
-
-  componentDidMount = () => {
+  constructor() {
+    super()
     document.body.classList.add("landing-bg")
   }
+
+  // componentDidMount = () => {
+  //   document.body.classList.add("landing-bg")
+  // }
 
   componentWillUnmount = () => {
     document.body.classList.remove("landing-bg")
