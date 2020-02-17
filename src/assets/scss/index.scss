@@ -1,0 +1,66 @@
+@import "./About.scss";
+@import "./Contact.scss";
+@import "./FixedSidenav.scss";
+@import "./Landing.scss";
+@import "./NotFound.scss";
+@import "./Projects.scss";
+@import "./Sidenav.scss";
+@import "./Thanks.scss";
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  font-family: "Open Sans", sans-serif;
+}
+
+.mt-25 {
+  margin-top: 25px;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.component-heading {
+  font-size: 3rem;
+}
+
+.blue-text {
+  color: #034694 !important;
+}
+
+.btn-portfolio {
+  background: #034694 !important;
+}
+
+.custom-container {
+  padding-left: 300px;
+}
+
+/* label focus color */
+.custom-input-field input:focus + label {
+  color: #034694 !important;
+}
+/* label underline focus color */
+.custom-input-field input:focus {
+  border-bottom: 1px solid #034694 !important;
+  box-shadow: 0 1px 0 0 #034694 !important;
+}
+
+/* label focus color */
+.custom-input-field textarea:focus + label {
+  color: #034694 !important;
+}
+/* label underline focus color */
+.custom-input-field textarea:focus {
+  border-bottom: 1px solid #034694 !important;
+  box-shadow: 0 1px 0 0 #034694 !important;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
