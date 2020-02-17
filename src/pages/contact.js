@@ -68,7 +68,7 @@ class Contact extends Component {
       }),
     })
       .then(() => {
-        navigate(form.getAttribute("action"))
+        // navigate(form.getAttribute("action"))
       })
       .catch(error => alert(error))
   }
