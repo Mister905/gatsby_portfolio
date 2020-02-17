@@ -13,7 +13,7 @@ class FixedSidenav extends Component {
       outDuration: 200,
       draggable: true,
     }
-    window.M.Sidenav.init(this.Sidenav, options)
+    M.Sidenav.init(this.Sidenav, options)
   }
   render() {
     return (
