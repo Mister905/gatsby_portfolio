@@ -1,7 +1,7 @@
-import React from 'react'
-import { navigate } from 'gatsby'
-import Recaptcha from 'react-google-recaptcha'
-import Layout from '../layout'
+import React from "react"
+import { navigate } from "gatsby"
+import Recaptcha from "react-google-recaptcha"
+import Layout from "../layout"
 
 const RECAPTCHA_KEY = process.env.GATSBY_SITE_RECAPTCHA_KEY
 if (typeof RECAPTCHA_KEY === "undefined") {
@@ -15,37 +15,37 @@ if (typeof RECAPTCHA_KEY === "undefined") {
 
 function encode(data) {
   return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
 }
 
 export default function Contact() {
   const [state, setState] = React.useState({})
   const recaptchaRef = React.createRef()
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault()
     const form = e.target
     const recaptchaValue = recaptchaRef.current.getValue()
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        'form-name': form.getAttribute('name'),
-        'g-recaptcha-response': recaptchaValue,
+        "form-name": form.getAttribute("name"),
+        "g-recaptcha-response": recaptchaValue,
         ...state,
       }),
     })
-      .then(() => navigate(form.getAttribute('action')))
-      .catch((error) => alert(error))
+      .then(() => navigate(form.getAttribute("action")))
+      .catch(error => alert(error))
   }
 
   return (
-    
+    <div>
       <h1>reCAPTCHA 2</h1>
       <form
         name="contact-recaptcha"
@@ -84,6 +84,6 @@ export default function Contact() {
           <button type="submit">Send</button>
         </p>
       </form>
-
+    </div>
   )
 }
