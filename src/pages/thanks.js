@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import Thumbs_Up from "../assets/img/thumbs_up.gif"
 import FixedSidenav from "../components/FixedSidenav"
+import Head from "../components/Head"
 
 class Thanks extends Component {
   constructor() {
@@ -12,6 +13,7 @@ class Thanks extends Component {
   render() {
     return (
       <div>
+        <Head title="Thanks" />
         <FixedSidenav />
         <div className="container custom-container">
           <div className="row mt-25">
