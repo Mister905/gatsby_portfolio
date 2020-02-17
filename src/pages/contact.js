@@ -33,7 +33,7 @@ class Contact extends Component {
     typeof document !== `undefined`
       ? document.body.classList.add("bg-gray")
       : null
-    const recaptchaRef = React.createRef()
+    this.recaptchaRef = React.createRef()
   }
   state = {
     name: "",
