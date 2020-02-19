@@ -15,6 +15,7 @@ if (typeof window !== "undefined") {
   require("materialize-css/dist/js/materialize.min.js")
 }
 // https://docs.netlify.com/forms/spam-filters/#netlify-provided-recaptcha-2
+// See environment variables on Netlify
 
 const RECAPTCHA_KEY = process.env.GATSBY_SITE_RECAPTCHA_KEY
 if (typeof RECAPTCHA_KEY === "undefined") {
@@ -78,7 +79,7 @@ class Contact extends Component {
         <FixedSidenav />
         <div className="container custom-container">
           <div className="row mt-25">
-            <div className="col m8 offset-m2 card">
+            <div className="col m12 card">
               <div className="row">
                 <div className="col m12 center-align mt-25">
                   <div className="component-heading dark-blue-text fw-600">
@@ -88,7 +89,7 @@ class Contact extends Component {
               </div>
               <div className="row mt-25">
                 <form
-                  className="col m12 contact-form"
+                  className="col m8 offset-m2 contact-form"
                   name="contact"
                   method="POST"
                   data-netlify="true"
@@ -104,7 +105,6 @@ class Contact extends Component {
                       <input name="bot-field" />
                     </label>
                   </div>
-
                   <div className="row">
                     <div className="col m10 offset-m1 custom-input-field">
                       <label className="dark-blue-text fw-600">
@@ -118,7 +118,6 @@ class Contact extends Component {
                       </label>
                     </div>
                   </div>
-
                   <div className="row">
                     <div className="col m10 offset-m1 custom-input-field">
                       <label className="dark-blue-text fw-600">
@@ -132,7 +131,6 @@ class Contact extends Component {
                       </label>
                     </div>
                   </div>
-
                   <div className="row">
                     <div className="col m10 offset-m1 custom-input-field">
                       <label className="dark-blue-text fw-600">
