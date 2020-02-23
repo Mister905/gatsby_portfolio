@@ -244,8 +244,7 @@ class Projects extends Component {
                         GitHub Repo
                       </a>
                       <p>
-                        React app that displays real-time weather forecasts from
-                        the Dark Sky API
+                        Blog about the historical development of city skylines. Created with Gatsby and Contentful CMS.
                       </p>
                     </div>
                   </div>
