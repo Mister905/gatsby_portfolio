@@ -4,7 +4,7 @@ import FixedSidenav from "../components/FixedSidenav"
 import mernbook from "../assets/img/project_images/mernbook/mernbook.png"
 import mern_survey from "../assets/img/project_images/mern-survey/mern-survey.png"
 import art_gallery from "../assets/img/project_images/art_gallery/art_gallery.png"
-import dark_sky from "../assets/img/project_images/dark_sky/dark_sky.png"
+import skyline from "../assets/img/project_images/skyline/skyline.PNG"
 import expensicon from "../assets/img/project_images/expensicon/expensicon.png"
 import jeopardy from "../assets/img/project_images/jeopardy/jeopardy.png"
 import { GoMarkGithub } from "react-icons/go"
@@ -219,12 +219,12 @@ class Projects extends Component {
                   <div className="row">
                     <div className="col m12">
                       <a
-                        href="https://dark-sky-api-react.herokuapp.com/"
+                        href="https://skyline-905.netlify.com"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         <img
-                          src={dark_sky}
+                          src={skyline}
                           alt=""
                           className="responsive-img project-image"
                         />
@@ -235,7 +235,7 @@ class Projects extends Component {
                     <div className="col m12">
                       <div className="valign-wrapper"></div>
                       <a
-                        href="https://github.com/Mister905/dark-sky-api"
+                        href="https://github.com/Mister905/skyline"
                         target="_blank"
                         className="github-link"
                         rel="noopener noreferrer"

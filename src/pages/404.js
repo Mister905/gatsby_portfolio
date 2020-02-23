@@ -23,7 +23,7 @@ class NotFound extends Component {
             </div>
           </div>
           <div className="row">
-            <div className="col m8 offset-m2">
+            <div className="col m6 offset-m3">
               <img src={Pooh} alt="Profile Image" className="responsive-img" />
             </div>
           </div>
