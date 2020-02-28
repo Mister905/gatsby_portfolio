@@ -40,26 +40,26 @@ class About extends Component {
                     in 2015 while studying at the University of Toronto. I was
                     initially attracted to the prospect of employment associated
                     with the growing demand for software professionals. I
-                    discovered a genuine appreciation for the subject and
-                    practice that extended beyond pragmatic motivations. In time
-                    I discovered a valuable ability and eagerness to learn new
-                    things and grow into the role of a developer.
+                    discovered a genuine appreciation for the subject that
+                    extended beyond pragmatic motivations. With time, I
+                    developed the ability and eagerness to learn new things and
+                    grow into the role of a software developer.
                   </p>
                   <p className="about-text">
                     I am so fortunate for the personal growth and challenges
-                    that accompany this path. I am passionate about learning new
-                    technologies/frameworks and applying this knowledge to
-                    personal projects. You can sample some of my work{" "}
+                    that I have encountered on this path. I am passionate about
+                    learning new technologies/frameworks and applying my
+                    knowledge to personal projects. You can sample some of my
+                    work{" "}
                     <Link to="/projects" className="about-link">
                       here
                     </Link>
                     .
                   </p>
                   <p className="about-text">
-                    I am particularly interested in front-end web development as
-                    well as developing mobile applications. My favourite
-                    technologies at the moment are React and Node.js. Please
-                    feel free to{" "}
+                    I am particularly interested in front-end web development
+                    and mobile applications. My favourite technologies at the
+                    moment are React and Node.js. Please feel free to{" "}
                     <Link to="/contact" className="about-link">
                       contact me
                     </Link>{" "}
