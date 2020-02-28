@@ -47,8 +47,8 @@ class About extends Component {
                   </p>
                   <p className="about-text">
                     I am so fortunate for the personal growth and challenges
-                    that accompany this path. I enjoy learning new
-                    technologies/frameworks and applying these skills to
+                    that accompany this path. I am passionate about learning new
+                    technologies/frameworks and applying this knowledge to
                     personal projects. You can sample some of my work{" "}
                     <Link to="/projects" className="about-link">
                       here
