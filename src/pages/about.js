@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import Profile from "../assets/img/profile.jpg"
 import Head from "../components/Head"
 import FixedSidenav from "../components/FixedSidenav"
+import { Link } from "gatsby"
 
 class About extends Component {
   constructor() {
@@ -35,18 +36,27 @@ class About extends Component {
               <div className="row">
                 <div className="col m12 center-align">
                   <p className="about-text">
-                    Welcome vistor. My name is James McCarthy. I am a web
-                    developer from Hamilton, Ontario, Canada. I started learning
-                    how to code in 2015 while studying history and political
-                    science at the University of Toronto. I decided to pursue
-                    software development professionally and I was pleased to
-                    discover a genuine appreciation for the work involved. I
-                    continue to welcome the challenges and rewards that follow
-                    me on the road of professional development. I graduated from
-                    Mohawk College's software development program in 2020. I
-                    specialize in web and mobile development with a focus on
-                    React and React Native. Please be sure to check out some of
-                    my projects and feel free to contact me for any inquiry.
+                    Welcome vistor. My name is James McCarthy. I started coding
+                    in 2015 while studying at the University of Toronto. I was
+                    initially attracted to the prospect of employment associated
+                    with the growing demand for software professionals. I luckly
+                    developed a genuine appreciation for the subject and
+                    practice that extended beyond pragmatic movivation.
+                  </p>
+                  <p>
+                    I was thankful to discover a genuine appreciation for the
+                    work and personal growth that accompanied me on this new
+                    path. I enjoy learning new technologies/frameworks and
+                    applying these skills to personal projects. You can sample
+                    some of my work
+                    <Link to="/projects">here</Link>.
+                  </p>
+                  <p>
+                    I am particularly interested in front-end web development as
+                    well as developing mobile applications. My favourite
+                    technologies at the moment are React and Node.js. Please
+                    feel free to <Link to="/contact">contact me</Link> for any
+                    inquiry.
                   </p>
                 </div>
               </div>

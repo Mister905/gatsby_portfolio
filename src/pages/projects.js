@@ -244,7 +244,8 @@ class Projects extends Component {
                         GitHub Repo
                       </a>
                       <p>
-                        Blog about the historical development of city skylines. Created with Gatsby and Contentful CMS.
+                        Blog about the historical development of city skylines.
+                        Created with Gatsby and Contentful CMS.
                       </p>
                     </div>
                   </div>
