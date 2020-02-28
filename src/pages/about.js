@@ -43,20 +43,26 @@ class About extends Component {
                     developed a genuine appreciation for the subject and
                     practice that extended beyond pragmatic movivation.
                   </p>
-                  <p>
+                  <p className="about-text">
                     I was thankful to discover a genuine appreciation for the
                     work and personal growth that accompanied me on this new
                     path. I enjoy learning new technologies/frameworks and
                     applying these skills to personal projects. You can sample
-                    some of my work
-                    <Link to="/projects">here</Link>.
+                    some of my work{" "}
+                    <Link to="/projects" className="about-link">
+                      here
+                    </Link>
+                    .
                   </p>
-                  <p>
+                  <p className="about-text">
                     I am particularly interested in front-end web development as
                     well as developing mobile applications. My favourite
                     technologies at the moment are React and Node.js. Please
-                    feel free to <Link to="/contact">contact me</Link> for any
-                    inquiry.
+                    feel free to{" "}
+                    <Link to="/contact" className="about-link">
+                      contact me
+                    </Link>{" "}
+                    for any inquiry.
                   </p>
                 </div>
               </div>
