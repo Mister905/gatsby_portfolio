@@ -39,16 +39,17 @@ class About extends Component {
                     Welcome vistor. My name is James McCarthy. I started coding
                     in 2015 while studying at the University of Toronto. I was
                     initially attracted to the prospect of employment associated
-                    with the growing demand for software professionals. I luckly
-                    developed a genuine appreciation for the subject and
-                    practice that extended beyond pragmatic movivation.
+                    with the growing demand for software professionals. I
+                    discovered a genuine appreciation for the subject and
+                    practice that extended beyond pragmatic motivations. In time
+                    I discovered a valuable ability and eagerness to learn new
+                    things and grow into the role of a developer.
                   </p>
                   <p className="about-text">
-                    I was thankful to discover a genuine appreciation for the
-                    work and personal growth that accompanied me on this new
-                    path. I enjoy learning new technologies/frameworks and
-                    applying these skills to personal projects. You can sample
-                    some of my work{" "}
+                    I am so fortunate for the personal growth and challenges
+                    that accompany this path. I enjoy learning new
+                    technologies/frameworks and applying these skills to
+                    personal projects. You can sample some of my work{" "}
                     <Link to="/projects" className="about-link">
                       here
                     </Link>
